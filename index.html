@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC lernen</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/abc.css">
+</head>
+<body>
+    
+    <div class="header">
+        <h1>Lern das <span class="a">A</span><span class="b">B</span><span class="c">C</span></h1>
+    </div>
+
+    <div class="uebersicht">
+        <table>
+            <tr>
+                <td id="a" onclick="zeige_buchstabe('a')">A</td>
+                <td id="b" onclick="zeige_buchstabe('b')">B</td>
+                <td id="c" onclick="zeige_buchstabe('c')">C</td>
+                <td id="d" onclick="zeige_buchstabe('d')">D</td>
+            </tr>
+            <tr>
+                <td id="e" onclick="zeige_buchstabe('e')">E</td>
+                <td id="f" onclick="zeige_buchstabe('f')">F</td>
+                <td id="g" onclick="zeige_buchstabe('g')">G</td>
+                <td id="h" onclick="zeige_buchstabe('h')">H</td>
+            </tr>
+            <tr>
+                <td id="i" onclick="zeige_buchstabe('i')">I</td>
+                <td id="j" onclick="zeige_buchstabe('j')">J</td>
+                <td id="k" onclick="zeige_buchstabe('k')">K</td>
+                <td id="l" onclick="zeige_buchstabe('l')">L</td>
+            </tr>
+            <tr>
+                <td id="m" onclick="zeige_buchstabe('m')">M</td>
+                <td id="n" onclick="zeige_buchstabe('n')">N</td>
+                <td id="o" onclick="zeige_buchstabe('o')">O</td>
+                <td id="p" onclick="zeige_buchstabe('p')">P</td>
+            </tr>
+            <tr>
+                <td id="q" onclick="zeige_buchstabe('q')">Q</td>
+                <td id="r" onclick="zeige_buchstabe('r')">R</td>
+                <td id="s" onclick="zeige_buchstabe('s')">S</td>
+                <td id="t" onclick="zeige_buchstabe('t')">T</td>
+            </tr>
+            <tr>
+                <td id="u" onclick="zeige_buchstabe('u')">U</td>
+                <td id="v" onclick="zeige_buchstabe('v')">V</td>
+                <td id="w" onclick="zeige_buchstabe('w')">W</td>
+                <td id="x" onclick="zeige_buchstabe('x')">X</td>
+            </tr>
+            <tr>
+                <td id="fragezeichen">?</td>
+                <td id="y" onclick="zeige_buchstabe('y')">Y</td>
+                <td id="z" onclick="zeige_buchstabe('z')">Z</td>
+                <td id="ausrufezeichen">!</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="buchstabe"></div>
+
+    <script src="./assets/jquery-3.7.1.min.js"></script>
+    <script src="./assets/jquery-ui.min.js"></script>
+    <script src="./assets/abc.js"></script>
+</body>
+</html>
