@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candy Crush Klon</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #222;
+    }
+    #game {
+      display: grid;
+      grid-template-columns: repeat(7, 50px);
+      grid-template-rows: repeat(7, 50px);
+      gap: 2px;
+    }
+    .tile {
+      width: 50px;
+      height: 50px;
+      background-color: grey;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <div id="game"></div>
+
+  <script>
+    const game = document.getElementById("game");
+    const width = 7;
+    const height = 7;
+    const colors = ["red", "yellow", "green", "blue", "purple"];
+    let grid = [];
+    let firstTile = null;
+
+    function createBoard() {
+      for (let i = 0; i < width * height; i++) {
+        const tile = document.createElement("div");
+        tile.classList.add("tile");
+        tile.dataset.index = i;
+        tile.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        tile.addEventListener("click", () => handleClick(tile));
+        game.appendChild(tile);
+        grid.push(tile);
+      }
+    }
+
+    function handleClick(tile) {
+      if (!firstTile) {
+        firstTile = tile;
+        tile.style.outline = "2px solid white";
+      } else {
+        swapTiles(firstTile, tile);
+        firstTile.style.outline = "none";
+        firstTile = null;
+        checkMatches();
+      }
+    }
+
+    function swapTiles(tile1, tile2) {
+      const temp = tile1.style.backgroundColor;
+      tile1.style.backgroundColor = tile2.style.backgroundColor;
+      tile2.style.backgroundColor = temp;
+    }
+
+    function checkMatches() {
+      // Check rows
+      for (let row = 0; row < height; row++) {
+        for (let col = 0; col < width - 2; col++) {
+          let i = row * width + col;
+          let color = grid[i].style.backgroundColor;
+          if (color && grid[i + 1].style.backgroundColor === color && grid[i + 2].style.backgroundColor === color) {
+            grid[i].style.backgroundColor = "grey";
+            grid[i + 1].style.backgroundColor = "grey";
+            grid[i + 2].style.backgroundColor = "grey";
+          }
+        }
+      }
+      // Check columns
+      for (let col = 0; col < width; col++) {
+        for (let row = 0; row < height - 2; row++) {
+          let i = row * width + col;
+          let color = grid[i].style.backgroundColor;
+          if (color && grid[i + width].style.backgroundColor === color && grid[i + 2 * width].style.backgroundColor === color) {
+            grid[i].style.backgroundColor = "grey";
+            grid[i + width].style.backgroundColor = "grey";
+            grid[i + 2 * width].style.backgroundColor = "grey";
+          }
+        }
+      }
+    }
+
+    createBoard();
+  </script>
+</body>
+</html>
