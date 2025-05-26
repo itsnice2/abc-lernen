@@ -7,8 +7,23 @@ var vorlage = " <div>" +
                 "<div class=\"malen-buchstabe center\">###BUCHSTABE_G### malen</div>" + 
                 "<div class=\"worte-buchstabe center\">###BUCHSTABE_G### ###BUCHSTABE_G### ###BUCHSTABE_G###</div>";
 
-$(function(){
+$(function(){      
 
+    $(document).keypress(function(e){
+
+        if(e.key.match(/[a-zäÄöÖüÜ]/i)){
+            zeige_buchstabe(e.key.toLowerCase());
+        }
+        
+        /*if(e.key === "Escape") {
+            zeige_uebersicht();
+        }*/
+        
+        if(e.key.match(/[ ]/i)) {
+            zeige_uebersicht();
+        }
+
+    });    
  
 });
 
