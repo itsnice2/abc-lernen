@@ -50,9 +50,46 @@ td:active{
 
 table{
     position: relative;
-    left: calc(50% - 200px)
+    left: calc(50% - 200px);
+    /*background-image: linear-gradient(#e5ff00, #ff0000);*/
+}
+/*
+.row1{    
+    color: #ff0000;
+    text-shadow: 3px 3px black;
 }
 
+.row2{
+    color: #ffae00;
+    text-shadow: 3px 3px black;
+}
+
+.row3{
+    color: #eeff00;
+    text-shadow: 3px 3px black;
+}
+
+.row4{
+    color: #51ff00;
+    text-shadow: 3px 3px black;
+}
+
+.row5{
+    color: #0b8800;
+    text-shadow: 3px 3px black;
+}
+
+.row6{
+    color: #00eeff;
+    text-shadow: 3px 3px black;
+}
+
+.row7{
+    color: #0400ff;
+    text-shadow: 3px 3px black;
+}
+
+*/
 .buchstabe{    
     display: none;
     
@@ -61,21 +98,23 @@ table{
     left: calc(50% - 200px)*/
 }
 
-#fragezeichen{
+#fragezeichen, #ausrufezeichen{
     color: white;
+    text-shadow: none;
 }
 
-#ausrufezeichen{
-    color: white;
-}
 
 .zurueck{
     /*position:fixed;
     left: 400px;*/
-    font-size: 24pt;
-    width: 100px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #ff5353;
+    color: white;
+    font-size: 18pt;
+    width: 120px;
     position: relative;
-    left: calc(50% - 50px);
+    left: calc(50% - 60px);
 }
 
 .zurueck:hover{
@@ -90,12 +129,29 @@ table{
     
 }
 
+.worte-tabelle-td, .worte-tabelle-td:hover{
+    background-color: white !important;
+    color: black !important;
+}
+
 .worte-buchstabe{
     
 }
 
+.worte-bilder{
+    height: 200px;
+    border-radius: 25%;
+}
+
+.worte-ausgabe{
+    font-size: 32pt;
+    width: 400px;
+    position:relative;
+    left: calc(50% - 200px);
+}
+
 .center{
-    text-align: center;
+    text-align: center;    
 }
 
 .ton{
